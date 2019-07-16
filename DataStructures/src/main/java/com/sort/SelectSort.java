@@ -13,21 +13,18 @@ public class SelectSort {
     }
 
     private static void selectSort(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {  //循环n-1次即可
-            int min = arr[i];
-            int minIndex = i;
 
-            //选出最小数
-            for (int j = i+1; j < arr.length; j++) { //与i位置后一位比较
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
+            int min = arr[i];
+            for (int j = i+1; j < arr.length; j++) {
                 if (min>arr[j]){
                     min = arr[j];
                     minIndex = j;
                 }
             }
-//            进行交换位置
             arr[minIndex] = arr[i];
             arr[i] = min;
         }
-
     }
 }
